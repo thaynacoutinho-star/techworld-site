@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechWorld</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: #0f172a;
+      color: white;
+    }
+
+    header{
+      background: linear-gradient(90deg,#2563eb,#7c3aed);
+      padding: 25px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1{
+      font-size: 40px;
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card h2{
+      margin-bottom:10px;
+      color:#60a5fa;
+    }
+
+    .card p{
+      margin-bottom:15px;
+      line-height:1.5;
+    }
+
+    .like-btn{
+      background:#2563eb;
+      border:none;
+      color:white;
+      padding:12px 18px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    .like-btn:hover{
+      background:#1d4ed8;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      margin-top:40px;
+      color:#9ca3af;
+    }
+
+    .titulo{
+      text-align:center;
+      margin-bottom:35px;
+      font-size:32px;
+      color:#93c5fd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚀 TechWorld</h1>
+    <p>O futuro da tecnologia está aqui</p>
+  </header>
+
+  <div class="container">
+
+    <h2 class="titulo">Novidades da Tecnologia</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+          <h2>🤖 Inteligência Artificial</h2>
+          <p>
+            A inteligência artificial está revolucionando o mundo com robôs,
+            automações e novas descobertas.
+          </p>
+
+          <button class="like-btn" onclick="curtir(0)">
+            ❤️ Curtidas: <span id="like0">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+          <h2>💻 Programação</h2>
+          <p>
+            A programação permite criar sites, aplicativos, jogos e diversas
+            soluções modernas.
+          </p>
+
+          <button class="like-btn" onclick="curtir(1)">
+            ❤️ Curtidas: <span id="like1">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+          <h2>📱 Tecnologia Mobile</h2>
+          <p>
+            Os smartphones evoluem cada vez mais trazendo velocidade,
+            câmeras incríveis e inteligência.
+          </p>
+
+          <button class="like-btn" onclick="curtir(2)">
+            ❤️ Curtidas: <span id="like2">0</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 TechWorld | Desenvolvido por você 💙
+  </footer>
+
+  <script>
+    let curtidas = [0, 0, 0];
+
+    function curtir(post){
+      curtidas[post]++;
+      document.getElementById("like" + post).innerText = curtidas[post];
+    }
+  </script>
+
+</body>
+</html>
